@@ -3,24 +3,25 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-tampil',
+  templateUrl: './tampil.page.html',
+  styleUrls: ['./tampil.page.scss'],
 })
-export class Tab1Page {
-
+export class TampilPage implements OnInit {
   private items;
   private total : number = 0;
   private q: string = "";
 
   constructor(
     private http : HttpClient,
-    private router:Router,
-    
-    ) {}
+    private router : Router,
+    ) { }
+
+  ngOnInit() {
+  }
 
   showDetail(id_produk: any){
-    this.router.navigate(["/itemdetails", id_produk]);
+    this.router.navigate(["/crud/detail", id_produk]);
   }
 
 

@@ -28,95 +28,30 @@
 </ion-header>
 
 <ion-content>
+  <ion-item>
+  <ion-label>
+    <ion-icon slot="start" name="search"></ion-icon>
+  </ion-label>
+  <!--keyup : akan menampilkan data setalah dicari-->
+  <ion-input [(ngModel)]="q" placeholder="pencarian..."(keyup)="showitems()"></ion-input>
+</ion-item>
 <ion-grid>
   <ion-row>
-    <ion-col>
+    <ion-col *ngFor="let item of items" detail (click)="showDetail(item.id_produk)">
       <ion-card>
   <ion-card-header>
-    <ion-card-subtitle> <img src="https://blogpictures.99.co/retro-400-ribu.jpg"> </ion-card-subtitle>
-    <ion-card-title>Kursi Kayu</ion-card-title>
+    <ion-card-subtitle> <img src="http://127.0.0.1:8000/gambar_produk/{{item.gambar}}"> </ion-card-subtitle>
+    <ion-card-title>{{item.nama_produk}}</ion-card-title>
   </ion-card-header>
-
   <ion-card-content>
-    Rp.324.000
+    {{item.tipe_produk}}
+    <tr>
+    Rp.{{item.harga}}
   </ion-card-content>
-  <ion-button (click)="btnClicked()" routerlink="/itemdetails" color="success" size="small">Detail</ion-button>
 </ion-card>
     </ion-col>
 
-   <ion-col>
-      <ion-card>
-  <ion-card-header>
-    <ion-card-subtitle> <img src="https://blogpictures.99.co/retro-400-ribu.jpg"> </ion-card-subtitle>
-    <ion-card-title>Kursi Kayu</ion-card-title>
-  </ion-card-header>
-
-  <ion-card-content>
-    Rp.324.000
-  </ion-card-content>
-  <ion-button color="primary" size="small">Detail</ion-button>
-</ion-card>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-
-<ion-grid>
-  <ion-row>
-   <ion-col>
-      <ion-card>
-  <ion-card-header>
-    <ion-card-subtitle> <img src="https://blogpictures.99.co/retro-400-ribu.jpg"> </ion-card-subtitle>
-    <ion-card-title>Kursi Kayu</ion-card-title>
-  </ion-card-header>
-
-  <ion-card-content>
-    Rp.324.000
-  </ion-card-content>
-  <ion-button color="primary" size="small">Detail</ion-button>
-</ion-card>
-    </ion-col>
-
-   <ion-col>
-      <ion-card>
-  <ion-card-header>
-    <ion-card-subtitle> <img src="https://blogpictures.99.co/retro-400-ribu.jpg"> </ion-card-subtitle>
-    <ion-card-title>Kursi Kayu</ion-card-title>
-  </ion-card-header>
-
-  <ion-card-content>
-    Rp.324.000
-  </ion-card-content>
-  <ion-button color="primary" size="small">Detail</ion-button>
-</ion-card>
-    </ion-col>
-
-<ion-col>
-      <ion-card>
-  <ion-card-header>
-    <ion-card-subtitle> <img src="https://blogpictures.99.co/retro-400-ribu.jpg"> </ion-card-subtitle>
-    <ion-card-title>Kursi Kayu</ion-card-title>
-  </ion-card-header>
-
-  <ion-card-content>
-    Rp.324.000
-  </ion-card-content>
-  <ion-button color="primary" size="small">Detail</ion-button>
-</ion-card>
-    </ion-col>
-
-    <ion-col>
-      <ion-card>
-  <ion-card-header>
-    <ion-card-subtitle> <img src="https://blogpictures.99.co/retro-400-ribu.jpg"> </ion-card-subtitle>
-    <ion-card-title>Kursi Kayu</ion-card-title>
-  </ion-card-header>
-
-  <ion-card-content>
-    Rp.324.000
-  </ion-card-content>
-  <ion-button color="primary" size="small" >Detail</ion-button>
-</ion-card>
-    </ion-col>
+   
 
   </ion-row>
 </ion-grid>

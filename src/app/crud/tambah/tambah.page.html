@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button>back</ion-back-button>
+    </ion-buttons>
+    <ion-title>tambah</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-item>
+  <ion-label position="floating">Id Produk</ion-label>
+  <ion-input [(ngModel)]="id_produk"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Nama Produk</ion-label>
+  <ion-input [(ngModel)]="nama_produk"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Tipe Produk</ion-label>
+  <ion-input [(ngModel)]="tipe_produk"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Stok</ion-label>
+  <ion-input [(ngModel)]="stok"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Harga</ion-label>
+  <ion-input [(ngModel)]="harga"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Gambar</ion-label>
+  <ion-input [(ngModel)]="gambar"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Status Produk</ion-label>
+  <ion-input [(ngModel)]="status_produk"></ion-input>
+</ion-item>
+<ion-button (click)="additem()" expand="block">
+  <ion-icon slot="start" name="save"></ion-icon> Simpan
+</ion-button>
+</ion-content>

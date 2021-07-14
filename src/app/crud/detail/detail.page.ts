@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from "@angular/common/http";
 
 @Component({
-  selector: 'app-itemdetails',
-  templateUrl: './itemdetails.page.html',
-  styleUrls: ['./itemdetails.page.scss'],
+  selector: 'app-detail',
+  templateUrl: './detail.page.html',
+  styleUrls: ['./detail.page.scss'],
 })
-export class ItemdetailsPage implements OnInit {
+export class DetailPage implements OnInit {
 
   id_produk: string;
   nama_produk: string;
@@ -25,7 +25,7 @@ export class ItemdetailsPage implements OnInit {
   ngOnInit() {
   }
 
-ionViewWillEnter(){
+  ionViewWillEnter(){
     this.showDetail();
   }
 
@@ -34,8 +34,8 @@ ionViewWillEnter(){
 
     let server_url = 'http://127.0.0.1:8000/api/produk/' + this.id_produk;
     this.http.get(server_url)
-    .subscribe((res : any)=> {
-      this.id_produk = res.id_produk
+    .subscribe((res: any)=> {
+      this.id_produk = res.id_produk;
       this.nama_produk = res.nama_produk;
       this.tipe_produk = res.tipe_produk;
       this.stok = res.stok;
@@ -47,7 +47,3 @@ ionViewWillEnter(){
   }
 
 }
-
-
-
-
